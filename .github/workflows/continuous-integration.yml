@@ -28,4 +28,4 @@ jobs:
         run: npm run build
 
       - name: Move Public to Route
-        run: cp ./public/* ./
+        run: cp /public/* /
