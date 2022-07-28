@@ -3,3 +3,8 @@ _site
 .jekyll-metadata
 node_modules
 .parcel-cache
+
+/node_modules/
+/public/build/
+
+.DS_Store
