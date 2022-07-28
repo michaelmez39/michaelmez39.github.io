@@ -26,3 +26,6 @@ jobs:
       # run npm test, build, lint, etc.
       - name: Build Svelte Bundle
         run: npm run build
+
+      - name: Move Public to Route
+        run: cp ./public/* ./
