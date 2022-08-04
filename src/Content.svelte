@@ -16,5 +16,5 @@
 		<path d="M 50 50 C 60 10, 90 3, 100 3" stroke="white" fill="transparent"/>
 		<path d="M 100 3 L 300 3" stroke="white" fill="transparent"/>
 	</svg>
-	
+	<img src=""  />
 </article>
