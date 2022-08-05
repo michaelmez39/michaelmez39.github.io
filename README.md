@@ -1,8 +1,4 @@
-# This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or  if you want a full-fledged app framework and don't mind using pre-1.0 software  use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
-
----
-
-# svelte app
+# Michael Mezzina Showcase
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
@@ -76,7 +72,7 @@ If you want to use `baseUrl` or `path` aliases within your `tsconfig`, you need 
 
 ## Deploying to the web
 
-### With [Vercel](https://vercel.com)
+### [Vercel](https://vercel.com)
 
 Install `vercel` if you haven't already:
 
@@ -89,19 +85,4 @@ Then, from within your project folder:
 ```bash
 cd public
 vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
 ```

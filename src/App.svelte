@@ -7,6 +7,7 @@
 <style>
 	#app {
 		display: grid;
+		min-height: 100%;
 		grid-template-columns: 1fr repeat(8, 2fr) 1fr;
 		grid-template-rows: 80px 150px 1fr 50px;
 		background-color: #003464;
@@ -14,7 +15,14 @@
 	h1 {
 		grid-column: 3/6;
 		font-family: 'Orbitron', sans-serif;
+		font-kerning: none;
 		color: white;
+	}
+	@media (max-width: 576px) {
+		#app {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 </style>
 <div id="app">

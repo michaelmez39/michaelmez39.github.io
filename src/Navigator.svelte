@@ -25,6 +25,14 @@
 		grid-column: 6/10;
 		align-self: center;
 	}
+	@media (max-width: 576px) {
+		.navigator {
+			width: 100%;
+		}
+		ul {
+			justify-content: space-around;
+		}
+	}
 </style>
 <div class="navigator">
 	<nav>
