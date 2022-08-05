@@ -1,81 +1,68 @@
+<script>
+	import Home from "./Pages/Home.svelte";
+	import About from "./Pages/About.svelte";
+	import {current_page} from "./stores.js";
+	let pageValue = 0;
+	current_page.subscribe(value => {
+		pageValue = value;
+	});
+	$: console.log("current page" + pageValue);
+	function advance() {
+		current_page.update(n => (n+1) % 6);
+	}
+	function back() {
+		current_page.update(n => (n-1) % 6);
+	}
+</script>
 <style>
 	#content {
 		position: relative;
 		grid-column: 1/-1;
 		flex-grow: 1;
 		height: 100%;
-	}
-	article {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		padding: 0;
-		background-image: url("../moon.jpg");
-		background-size: cover;
-		background-position: bottom;
+		z-index: 0;
 
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		grid-auto-rows: minmax(70px, auto);
-		z-index: 0;
+		grid-template-columns: repeat(6, 1fr);
+		justify-content: center;
 	}
-	svg {
-		width: 100%;
-		margin: 0;
-		padding: 0;
-		position: absolute;
-		grid-column: 1/-1;
-		z-index: 1;
-	}
-	.earth {
-		grid-column: 2/3;
-	}
-	.intro {
+	.nav-button {
+		background-color: transparent;
+		z-index: 200;
 		margin: auto;
 		color: white;
-		font: 400 28px "Orbitron", sans-serif;
-		grid-column: 3/4;
+		border: none;
 	}
-	@media (max-height: 600px) {
-		.earth {
-			visibility: hidden;
-			display: none;
-		}
+
+	.next {
+		grid-column: 6/-1;
 	}
 	@media (max-width: 576px) {
-		article {
-			flex-grow: 1;
-			position: relative;
+		#content {
 			display: flex;
+			flex-direction: column;
 		}
-		svg {
-			display: none;
-			visibility: hidden;
-		}
-		.earth {
-			visibility: hidden;
-			display: none;
-		}
-
 	}
 </style>
+
 <div id="content">
-<svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
-	<path d="
-	M 100 0
-	L 0 0
-	L 0 100
-	C 0 100, 40 90, 50 50 
-	M 50 50 C 60 10, 90 0, 100 0" stroke="transparent" fill="#003464"/>
-	<path d="
-	M 0 100 C 1 100, 40 90, 50 50 
-	M 50 50 C 60 10, 90 0, 100 0.5" stroke="white" fill="transparent"/>
-	<path d="M 100 0.5 L 300 0.5" stroke="white" fill="transparent"/>
-</svg>
-<article>
-	<img class="earth" src="../earth.jpg" alt="earth" />
-	<div class="intro">
-		Rather than a boring old showcase, let's go on an adventure...
-	</div>
-</article>
+	{#if (pageValue > 0)}
+	<button class="nav-button" on:click={back}>
+		Previous
+	</button>
+	{/if}
+
+	{#if (pageValue === 0)}
+		<Home />
+	{:else if (pageValue === 1)}
+		<About />
+	{:else}
+		<Home />
+	{/if}
+
+	{#if (pageValue < 5)}
+	<button class="nav-button next" on:click={advance}>
+		Next
+	</button>
+	{/if}
 </div>

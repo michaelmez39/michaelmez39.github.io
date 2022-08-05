@@ -20,6 +20,6 @@
 	<address>
 		<span>Michael Mezzina</span>
 		<a href="https://www.linkedin.com/in/michael-mezzina">Linkedin</a>
-		<a href="https://github.com/michaelmez39">Github</a>
+		<a href="https://www.github.com/michaelmez39">Github</a>
 	</address>
 </footer>

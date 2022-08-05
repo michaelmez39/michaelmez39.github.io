@@ -1,3 +1,20 @@
+<script>
+	import {current_page} from "./stores.js";
+	const pages = ["Home", "About", "Resume", "Projects", "Thoughts"]
+	const updatePage = (i) => {
+		return () => current_page.set(i);
+	}
+</script>
+<div class="navigator">
+	<nav>
+		<ul>
+			{#each pages as page, i}
+				<a href="./#"><li on:click={updatePage(i)}>{page}</li></a>
+			{/each}
+		</ul>
+	</nav>
+</div>
+
 <style>
 	nav, ul {
 		width: 100%;
@@ -9,10 +26,11 @@
 		justify-content: space-between;
 	}
 	a {
-		color: white;
+		color: rgb(226, 226, 226);
+		transition: color 0.3s;
 	}
 	a:hover {
-		color: white;
+		color: rgb(221, 243, 245);
 		text-decoration: none;
 	}
 	li {
@@ -34,14 +52,3 @@
 		}
 	}
 </style>
-<div class="navigator">
-	<nav>
-		<ul>
-			<li><a href="./#">Home</a></li>
-			<li><a href="./#">About</a></li>
-			<li><a href="./#">Resume</a></li>
-			<li><a href="./#">Projects</a></li>
-			<li><a href="./#">Thoughts</a></li>
-		</ul>
-	</nav>
-</div>
