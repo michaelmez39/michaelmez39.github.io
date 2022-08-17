@@ -3,6 +3,5 @@
 </script>
 
 <SimplePage --background-image="url(../moonrise.jpeg)">
-    <h1>About Me</h1>
-    <h2>Stuff</h2>
+    <h1>Thoughts</h1>
 </SimplePage>

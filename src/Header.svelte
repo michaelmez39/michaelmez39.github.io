@@ -4,7 +4,7 @@
 <div id="header">
     <Navigator />
     <h1>
-        Not Just Another Showcase
+        A Stellar Showcase
     </h1>
 </div>
 

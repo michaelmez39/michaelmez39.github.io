@@ -1,17 +1,34 @@
 <script>
+	import {current_page} from "./stores.js";
 	import Home from "./Pages/Home.svelte";
 	import About from "./Pages/About.svelte";
-	import {current_page} from "./stores.js";
+	import Resume from "./Pages/Resume.svelte";
+	import Projects from "./Pages/Projects.svelte";
+	import Thoughts from "./Pages/Thoughts.svelte";
 	let pageValue = 0;
 	current_page.subscribe(value => {
 		pageValue = value;
 	});
-	$: console.log("current page" + pageValue);
+	let components = [
+		{name: 'Home', component: Home},
+		{name: 'About', component: About},
+		{name: 'Resume', component: Resume},
+		{name: 'Projects', component: Projects},
+		{name: 'Thoughts', component: Thoughts}
+	]
+	let current_component = {name: 'Home', component: Home};
+	$: current_component = components[pageValue];
+	// async function loadComponent(name) {
+	// 	console.log(`./${name}.svelte`);
+    //     return await import(`./Pages/${name}.svelte`);
+    // }
+	$: console.log(`current page: {current_component.name}`);
+
 	function advance() {
-		current_page.update(n => (n+1) % 6);
+		current_page.update(n => (n+1) % 5);
 	}
 	function back() {
-		current_page.update(n => (n-1) % 6);
+		current_page.update(n => (n-1) % 5);
 	}
 </script>
 <style>
@@ -52,15 +69,9 @@
 	</button>
 	{/if}
 
-	{#if (pageValue === 0)}
-		<Home />
-	{:else if (pageValue === 1)}
-		<About />
-	{:else}
-		<Home />
-	{/if}
+	<svelte:component this={current_component.component} />
 
-	{#if (pageValue < 5)}
+	{#if (pageValue < 4)}
 	<button class="nav-button next" on:click={advance}>
 		Next
 	</button>

@@ -46,6 +46,7 @@
 	@media (max-width: 576px) {
 		.navigator {
 			width: 100%;
+			grid-column: 1/-1;
 		}
 		ul {
 			justify-content: space-around;
