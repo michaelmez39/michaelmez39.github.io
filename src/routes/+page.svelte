@@ -1,9 +1,3 @@
-<script>
-	import {current_page} from "../stores.js";
-	const toAbout = () => {
-		current_page.set(1);
-	}
-</script>
 <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
 	<path d="
 	M 100 0
@@ -19,7 +13,7 @@
 
 <article class="intro">
 		<p>Rather than a boring old showcase, let's go on an adventure...</p>
-		<button on:click={toAbout}>Explore</button>
+		<button>Explore</button>
 </article>
 <div class="background">
 </div>
