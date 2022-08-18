@@ -9,7 +9,7 @@
 	<nav>
 		<ul>
 			{#each pages as page, i}
-				<a href="./#"><li on:click={updatePage(i)}>{page}</li></a>
+				<a href={`/${(page === "Home") ? "" : page.toLowerCase()}`}><li on:click={updatePage(i)}>{page}</li></a>
 			{/each}
 		</ul>
 	</nav>

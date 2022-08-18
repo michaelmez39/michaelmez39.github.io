@@ -12,9 +12,13 @@
 <img class="earth" src="../earth.png" alt="earth" />
 
 <article class="intro">
-		<p>Rather than a boring old showcase, let's go on an adventure...</p>
-		<button>Explore</button>
+	<p>Rather than a boring old showcase, let's go on an adventure...</p>
+	<button>Explore</button>
 </article>
+<a class="nav-button next" href="/about">
+	Next
+</a>
+
 <div class="background">
 </div>
 <style>  
@@ -49,7 +53,7 @@
 		border-radius: 10px;
 		border:1px solid white;
 		z-index: 100;
-
+		min-width: 100%;
 		color: white;
 		font: 400 28px "Orbitron", sans-serif;
 
