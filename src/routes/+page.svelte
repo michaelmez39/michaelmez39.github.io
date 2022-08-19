@@ -53,7 +53,6 @@
 		border-radius: 10px;
 		border:1px solid white;
 		z-index: 100;
-		min-width: 100%;
 		color: white;
 		font: 400 28px "Orbitron", sans-serif;
 
@@ -78,21 +77,19 @@
 	}
 	@media (max-width: 576px) {
 		article {
-			flex-grow: 1;
 			position: relative;
-			display: flex;
+			margin: 10px;
 		}
 		svg {
 			display: none;
 			visibility: hidden;
 		}
-		.intro {
-			margin: 10px;
-		}
 		.earth {
 			visibility: hidden;
 			display: none;
 		}
-
+		.background {
+			background-image: url(/earthrise.jpg);
+		}
 	}
 </style>
