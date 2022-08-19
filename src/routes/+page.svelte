@@ -37,7 +37,7 @@
 		position: absolute;
 		z-index: 1;
 		padding: 0;
-		background-image: url("../moon.jpg");
+		background-image: url("/moon.jpg");
 		background-size: cover;
 		background-position: bottom;
 	}
