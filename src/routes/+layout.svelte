@@ -3,6 +3,7 @@
 	import Header from "$lib/Header.svelte";
 	import '../app.css';
 	let name = 'world';
+	export const prerender = true;
 </script>
 <style>
 	#app {

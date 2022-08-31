@@ -12,7 +12,7 @@
         Previous
 </a>
 {:else}
-    <a class="nav-button" transition:fade>
+    <a class="nav-button" href="/#" transition:fade>
     </a>
 {/if}
 <article out:slide="{{delay:100, duration: 300, easing: backIn}}" in:slide="{{delay:550, duration: 200, easing: backOut}}">
@@ -24,7 +24,7 @@
     Next
 </a>
 {:else}
-    <a class="nav-button next" transition:fade>
+    <a class="nav-button next" href="/#" transition:fade>
     </a>
 {/if}
 <div class="background" transition:fade>
